@@ -23,7 +23,7 @@ Mint App
 
 ### How to do unit test
 
-    npx hardhat node (in indivitual terminal window)
+    npx hardhat node (in individual terminal window)
     npx hardhat compile
     npx hardhat test
 
