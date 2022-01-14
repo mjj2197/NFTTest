@@ -29,9 +29,9 @@ describe("Mint Function", function () {
     const event = tx.events[0];
     const value = event.args[2];
     const tokenId = value.toNumber();
-    const tokenURI = await NFTContract.tokenURI(tokenId)
+    const tokenOwner = await NFTContract.ownerOf(tokenId)
   
-    expect(tokenURI).to.be.equal(`${URI_BASE}${tokenId}.json`);
+    expect(tokenOwner).to.be.equal(owner.address);
   });
 
   it("should return error if mint from address not in list", async function () {
@@ -56,9 +56,9 @@ describe("Mint Function", function () {
     const event1 = tx1.events[0];
     const value1 = event1.args[2];
     const tokenId1 = value1.toNumber();
-    const tokenURI1 = await NFTContract.tokenURI(tokenId1)
+    const tokenOwner1 = await NFTContract.ownerOf(tokenId1)
   
-    expect(tokenURI1).to.be.equal(`${URI_BASE}${tokenId1}.json`);
+    expect(tokenOwner1).to.be.equal(addrs[0].address);
 
     // mint from address 2
     const transaction2 = await NFTContract.connect(addrs[1]).mintNFT();
@@ -66,9 +66,9 @@ describe("Mint Function", function () {
     const event2 = tx2.events[0];
     const value2 = event2.args[2];
     const tokenId2 = value2.toNumber();
-    const tokenURI2 = await NFTContract.tokenURI(tokenId2)
+    const tokenOwner2 = await NFTContract.ownerOf(tokenId2)
   
-    expect(tokenURI2).to.be.equal(`${URI_BASE}${tokenId2}.json`);
+    expect(tokenOwner2).to.be.equal(addrs[1].address);
   });
 
   it("should return error if mint before start/end time", async function () {
