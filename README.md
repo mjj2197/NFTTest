@@ -19,7 +19,7 @@ Mint App
 
     Testnet Addresses
     	- Network: Rinkeby (4)
-    		NFT: 0x9606debE23e2cbFA76321f8257dF5609a43085bc
+    		NFT: 
 
 ### How to do unit test
 
