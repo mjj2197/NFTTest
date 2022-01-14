@@ -10,7 +10,7 @@ Mint App
     	Node ^v14
     	Git
     Local Setup Steps:
-    	git clone https://github.com/.../....git
+    	git clone https://github.com/mjj2197/NFTTest.git
     	Install dependencies: npm install
     	Installs Hardhat & OpenZepplin dependencies
     	Compile Solidity: npm run compile
