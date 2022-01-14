@@ -127,11 +127,7 @@ contract NFT is ERC721, Ownable {
     * @param _address address to validate
     */
     function canMint(address _address) public view returns (bool) {
-        if(minterList[_address]){
-            return true;
-        } else {
-            return false;
-        }
+        return minterList[_address];
     }
 
     /**
